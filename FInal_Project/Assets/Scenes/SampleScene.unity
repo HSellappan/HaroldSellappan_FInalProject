@@ -223,9 +223,11 @@ GameObject:
   m_Component:
   - component: {fileID: 214674377}
   - component: {fileID: 214674376}
+  - component: {fileID: 214674379}
+  - component: {fileID: 214674378}
   m_Layer: 0
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: Bounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -297,6 +299,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &214674378
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214674375}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.606709, y: -0.9960712}
+  - {x: 1.6359898, y: -0.9949561}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!68 &214674379
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214674375}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.5130507, y: 0.8360422}
+  - {x: -0.70344394, y: 0.83843154}
+  - {x: -0.018970074, y: 0.81869173}
+  - {x: 1.6069815, y: 0.8086279}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &271449589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1297356318048777901, guid: bc63044a8422448d5b89b8ff68b29c8b, type: 3}
@@ -637,7 +685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882667111}
   m_LocalRotation: {x: 0, y: 0, z: 0.008726558, w: 0.999962}
-  m_LocalPosition: {x: -1.47, y: -0.708, z: 0}
+  m_LocalPosition: {x: -1.701, y: -0.744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -705,6 +753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   Wintext: {fileID: 1925937698}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &916611367
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +878,7 @@ GameObject:
   - component: {fileID: 1270522408}
   m_Layer: 0
   m_Name: dotted line
-  m_TagString: Untagged
+  m_TagString: Invert
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1093,7 +1142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649677159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.707, y: -1.193, z: 0}
+  m_LocalPosition: {x: -1.69, y: -1.193, z: 0}
   m_LocalScale: {x: 0.0119728055, y: 0.021750452, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

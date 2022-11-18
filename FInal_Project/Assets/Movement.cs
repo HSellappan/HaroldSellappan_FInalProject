@@ -10,10 +10,13 @@ public class Movement : MonoBehaviour
     private Rigidbody2D body;
 
     public TMP_Text Wintext;
+    public Vector3 startPosition;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
+        
+        
     }
 
     // Update is called once per frame
@@ -27,13 +30,13 @@ public class Movement : MonoBehaviour
             if(body.gravityScale == 1)
             {
                  body.velocity = new Vector2(body.velocity.x, speed);
-                 Debug.Log("Gravity scale positive");
+                 //Debug.Log("Gravity scale positive");
             }
             else if (body.gravityScale == -1)
             {
                 
                 body.velocity = new Vector2(body.velocity.x, speed)*-1;
-                Debug.Log("Gravity scale negative");
+                //Debug.Log("Gravity scale negative");
             }
 
            
@@ -45,27 +48,53 @@ public class Movement : MonoBehaviour
         if(collider.tag == "Gate")
         {
             Wintext.gameObject.SetActive(true);
-            Debug.Log("Activated");
+            body.gameObject.SetActive(false);
         }
-        if(body.gravityScale == 1)
+
+
+        if(collider.tag == "Invert")
         {
-             body.gravityScale = -1;
-             body.AddForce(new Vector2(0,-2), ForceMode2D.Impulse);
-             Vector3 rotate = new Vector3(0, 0, 180);
-             body.transform.eulerAngles = rotate;
-            //Physics2D.gravity = new Vector2(9.8f,0);
+            if(body.gravityScale == 1)
+            {
+                body.gravityScale = -1;
+                body.AddForce(new Vector2(0,-3), ForceMode2D.Impulse);
+                Vector3 rotate = new Vector3(0, 0, 180);
+                body.transform.eulerAngles = rotate;
+                //Physics2D.gravity = new Vector2(9.8f,0);
             
 
+            }
+            else if (body.gravityScale == -1)
+            {
+                body.gravityScale = 1;
+                body.AddForce(new Vector2(0,3), ForceMode2D.Impulse);
+                Vector3 rotate2 = new Vector3(0, 0, 1);
+                body.transform.eulerAngles = rotate2;
+                
+                
+            }   
+
         }
-        else if (body.gravityScale == -1)
+
+
+        if(collider.tag == "Bounds")
         {
-             body.gravityScale = 1;
-              body.AddForce(new Vector2(0,3), ForceMode2D.Impulse);
-              Vector3 rotate2 = new Vector3(0, 0, 1);
-              body.transform.eulerAngles = rotate2;
-            //Physics2D.gravity = new Vector2(9.8f,0);
-            
+            if(body.gravityScale == 1)
+            {
+                
+                body.transform.position = new Vector3(-1.701f, -0.744f, 0f);
+            }
+            else if(body.gravityScale == -1)
+            {
+                body.gravityScale = 1;
+                body.AddForce(new Vector2(0,-6), ForceMode2D.Impulse);
+                body.transform.position = new Vector3(-1.701f, -0.744f, 0f);
+                Vector3 rotate3 = new Vector3(0, 0, 1);
+                body.transform.eulerAngles = rotate3;
+            }
+           
         }
+       
 
            
         
